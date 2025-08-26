@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Dutrax</title>
+</head>
+<body>
+        <h1>Formulario Dutrax</h1>
+
+        <img src="/image/logo.jpeg" alt="logo do batman">
+
+        <h2>Por que você deve fazer este formulario?</h2>
+        <br>
+        
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero est dolores delectus consectetur dolore saepe iure error sed culpa blanditiis quia iusto ullam perferendis, numquam illum alias rerum dolorem? Fuga.</p>
+
+       
+
+        <form action="#" method="post">
+
+        <!-- Nome e Sobrenome -->
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" placeholder="Digite seu nome" required>
+            <br><br>
+            <label for="sobrenome">Sobrenome:</label>
+            <input type="text"  name="sobrenome" placeholder="Digite seu sobrenome" required>
+        </fieldset>
+        <br>
+
+        <!-- E-mail e Senha -->
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" placeholder="exemplo@email.com" required>
+        <br><br>
+
+        <label for="senha">Senha:</label>
+        <input type="password"  name="senha" placeholder="Digite sua senha" required>
+        <br><br>
+
+        <!-- Data de nascimento -->
+        <label for="nascimento">Data de Nascimento:</label>
+        <input type="date" name="nascimento" required>
+        <br><br>
+
+        <!-- Gênero -->
+        <label>Gênero:</label><br>
+        <input type="radio"  name="genero" value="masculino" required>
+        <label for="masculino">Masculino</label><br>
+
+        <input type="radio"  name="genero" value="feminino">
+        <label for="feminino">Feminino</label><br>
+
+        <input type="radio"  name="genero" value="outro">
+        <label for="outro">Outro</label>
+        <br><br>
+
+        <!-- Interesses -->
+        <label>Interesses:</label><br>
+        <input type="checkbox"  name="interesses" value="esporte">
+        <label for="esporte">Batman</label><br>
+
+        <input type="checkbox"  name="interesses" value="musica">
+        <label for="musica">Capitão America</label><br>
+
+        <input type="checkbox"  name="interesses" value="tecnologia">
+        <label for="tecnologia">Superman</label><br>
+
+        <input type="checkbox"  name="interesses" value="viagem">
+        <label for="viagem">Homem de Ferro</label><br><br>
+
+        <!-- Botões -->
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpar</button>
+    </form>
+
+    <a href="documentação.docx">Clique aqui para ler nossos termos</a>
+        
+
+
+</body>
+</html>
