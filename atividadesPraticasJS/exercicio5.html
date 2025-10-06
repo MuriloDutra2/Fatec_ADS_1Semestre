@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <!-- Pontos principais desse codigo:
+     
+    Neste codigo, sempre que  apertamos em adicionar, dispara uma função que cria um novo LI, e o textcontent é usado para colocar texto neste Li, com o metodo appendChild, uso para o elemento Li seja filho do Ul.
+
+
+    -->
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .input-container {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            flex-grow: 1; /* Faz o input ocupar o espaço disponível */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Minhas Tarefas</h1>
+        <div class="input-container">
+            <input type="text" id="input-tarefa" placeholder="Adicione uma nova tarefa">
+            <button id="btn-adicionar">Adicionar</button>
+        </div>
+        <ul id="lista-tarefas"></ul>
+    </div>
+
+    <script>
+        const inputTarefa = document.getElementById('input-tarefa');
+        const btnAdicionar = document.getElementById('btn-adicionar');
+        const listaTarefas = document.getElementById('lista-tarefas');
+
+        btnAdicionar.addEventListener('click', () => {
+            const textoTarefa = inputTarefa.value;
+
+            if (textoTarefa.trim() === '') {
+                return;
+            }
+
+            const novoItem = document.createElement('li');
+            novoItem.textContent = textoTarefa;
+            listaTarefas.appendChild(novoItem);
+            
+            inputTarefa.value = '';
+            inputTarefa.focus();
+        });
+    </script>
+
+</body>
+</html>

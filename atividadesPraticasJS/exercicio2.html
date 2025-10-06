@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudação Interativa</title>
+
+    <!-- Pontos principais desse codigo:
+     
+    Usei neste codigo o input para capturar o texto que o usuario digitou. Utilizei também um If/else para caso o String esteja vazio.
+    o texto content do Paragrafo é utlizado para mostrar  uma mensagem de erro/ ou o resultado desejado.
+
+
+    -->
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        input {
+            padding: 10px;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="input-nome" placeholder="Digite seu nome">
+    <button id="btn-saudar">Saudar</button>
+    <p id="mensagem-saudacao"></p>
+
+    <script>
+        const inputNome = document.getElementById('input-nome');
+        const btnSaudar = document.getElementById('btn-saudar');
+        const pMensagem = document.getElementById('mensagem-saudacao');
+
+        btnSaudar.addEventListener('click', () => {
+            const nomeDigitado = inputNome.value;
+
+            if (nomeDigitado === "") {
+                pMensagem.textContent = "Por favor, digite seu nome.";
+            } else {
+                pMensagem.textContent = `Olá, ${nomeDigitado}! Seja bem-vindo(a)! esta é a Dutrix.`;
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador por Button</title>
+
+
+    <!-- Pontos principais desse codigo:
+     
+    A variavel let contador é usada como um tipo de memória para guardar o numero atual, Enquanto os botões Incrementar e Resetar são responsaveis por disparar funções que sendo incrementar 
+    responsável por contador++ e resetar responsavel por contador = 0
+    Após qualquer alteração, o text content do h2 é atualizado para refletir o novo valor.
+    -->
+    <style>
+        
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        h2 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 id="contador">0</h2>
+    <button id="btn-incrementar">Incrementar</button>
+    <button id="btn-resetar">Resetar</button>
+
+    <script>
+        // 1. Selecionar os elementos do HTML
+        const contadorElemento = document.getElementById('contador');
+        const btnIncrementar = document.getElementById('btn-incrementar');
+        const btnResetar = document.getElementById('btn-resetar');
+
+        // 2. Criar uma variável para guardar o valor
+        let contador = 0;
+
+        // 3. Adicionar os "ouvintes de evento" (cliques)
+        btnIncrementar.addEventListener('click', () => {
+            // Aumenta o valor da variável
+            contador++;
+            // Atualiza o texto na tela com o novo valor
+            contadorElemento.textContent = contador;
+        });
+
+        btnResetar.addEventListener('click', () => {
+            // Volta o valor da variável para 0
+            contador = 0;
+            // Atualiza o texto na tela
+            contadorElemento.textContent = contador;
+        });
+    </script>
+
+</body>
+</html>

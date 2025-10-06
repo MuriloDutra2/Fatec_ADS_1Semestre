@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades de JavaScript - Murilo Dutra</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .menu-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+        }
+        /* NOVO: Estilos para o container das fotos */
+        .fotos-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Espaço entre as fotos */
+            margin-bottom: 25px;
+        }
+        /* NOVO: Estilos para as imagens */
+        .fotos-container img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%; /* Deixa as fotos redondas */
+            object-fit: cover; /* Garante que a foto preencha o círculo sem distorcer */
+            border: 3px solid #007bff;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 15px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <div class="fotos-container">
+            <img src="img/foto1.jpg" alt="Foto de Murilo Dutra">
+            <img src="img/foto2.jpg" alt="Outra foto de Murilo Dutra">
+        </div>
+
+        <h1>Atividades de JavaScript</h1>
+        <ul>
+            <li><a href="exercicio1.html">Exercício 1: Contador Simples</a></li>
+            <li><a href="exercicio2.html">Exercício 2: Saudação Interativa</a></li>
+            <li><a href="exercicio3.html">Exercício 3: Galeria de Imagens</a></li>
+            <li><a href="exercicio4.html">Exercício 4: FAQ (Accordion)</a></li>
+            <li><a href="exercicio5.html">Exercício 5: Lista de Tarefas</a></li>
+        </ul>
+    </div>
+</body>
+</html>

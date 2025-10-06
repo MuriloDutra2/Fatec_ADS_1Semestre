@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Imagens</title>
+    <!-- Pontos principais desse codigo:
+     
+   utlizei uma array para armenezar todas as imagens que instalei minhas aqui na pasta IMG
+   A variavel indiceAtual funciona como o marcador de pagina, os navegadores alteram o valor de indiceAtual com ++ e --, a logica If/else, é usada para fazer um lopping infito
+   a URl da tag img é alterada automaticamente o o Ince do Array
+    -->
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .galeria-container {
+            text-align: center;
+        }
+        /*Otimo para deixar a foto parecda com uma foto fisica*/
+        img {
+            max-width: 500px;
+            max-height: 300px;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="galeria-container">
+        <img id="imagem-galeria" src="" alt="Imagem da galeria">
+        <div>
+            <button id="btn-anterior">Anterior</button>
+            <button id="btn-proximo">Próximo</button>
+        </div>
+    </div>
+
+    <script>
+        const imgElemento = document.getElementById('imagem-galeria');
+        const btnAnterior = document.getElementById('btn-anterior');
+        const btnProximo = document.getElementById('btn-proximo');
+
+            const imagens = [
+            'img/foto1.jpg',
+            'img/foto2.jpg',
+            'img/foto3.jpg',
+            'img/foto4.jpg'
+        ];
+
+        let indiceAtual = 0;
+
+        function atualizarImagem() {
+            imgElemento.src = imagens[indiceAtual];
+        }
+
+        btnProximo.addEventListener('click', () => {
+            indiceAtual++;
+            if (indiceAtual >= imagens.length) {
+                indiceAtual = 0;
+            }
+            atualizarImagem();
+        });
+
+        btnAnterior.addEventListener('click', () => {
+            indiceAtual--;
+            if (indiceAtual < 0) {
+                indiceAtual = imagens.length - 1;
+            }
+            atualizarImagem();
+        });
+
+        atualizarImagem();
+    </script>
+
+</body>
+</html>
